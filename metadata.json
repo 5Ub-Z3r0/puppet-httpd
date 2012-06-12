@@ -1,0 +1,61 @@
+{
+  "name": "5ubZ3r0-httpd",
+  "author": "5ubZ3r0",
+  "description": "This module handles a standard httpd installation.\n\nIt has optional classes if you want to install and configure mod_ssl, php, mod_spdy or httpd-dev.\n\nIt has been tested on CentOS 6.2 and CentOS 5.8.\nIt could work also on debian, but that needs to be tested.",
+  "license": "GPL v3",
+  "project_page": "",
+  "source": "",
+  "summary": "This module handles a standard httpd installation.",
+  "version": "0.2.0",
+  "checksums": {
+    "Modulefile": "ea33e2d7fe4d97eafa07172c92c130db",
+    "README": "4c9b436e48a447d634eb821c06fff6fc",
+    "files/deflate.conf": "1fc678aa967f4fd3c8238c9111019a1d",
+    "files/error/error.html": "3af8411c82a0725c0ba6ba0fa681bd08",
+    "files/spdy/mod-spdy-beta_current_amd64.deb": "834c85038ae50260da3a070cfa0cdbdf",
+    "files/spdy/mod-spdy-beta_current_i386.deb": "7d72474e3983f390daf89f1289e08521",
+    "files/spdy/mod-spdy-beta_current_i386.rpm": "4abdee35392c1c6d329def2017393403",
+    "files/spdy/mod-spdy-beta_current_x86_64.rpm": "6d25d03bfb8249f7c6dcd9906909c995",
+    "lib/puppet/provider/a2mod/a2mod.rb": "0acf42d3d670a9915c5a3f46ae7335f1",
+    "lib/puppet/provider/a2mod/modfix.rb": "f4536cdca68d15a235cbb1e0b67e4406",
+    "lib/puppet/type/a2mod.rb": "adcf754a076153442eac2beb42736547",
+    "manifests/dev.pp": "13e0564d366f27694b115f8112406429",
+    "manifests/init.pp": "fcd8c8f976710eac6532adc2f28bfa44",
+    "manifests/params.pp": "d02eb87a3ed69ff638ca028b67001621",
+    "manifests/php.pp": "56ea7f297aaacdde001d3529051b3c0e",
+    "manifests/spdy.pp": "ef792b41408236aeda7f57a427f574eb",
+    "manifests/ssl.pp": "6d8a9caf1a13132b6cd2464da606281b",
+    "manifests/vhost.pp": "6eac84201d239436c386fe2adf4c4252",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
+    "templates/httpd.conf.RHEL.erb": "4cbcc29765356aeb9a01beece6738fe8",
+    "templates/localized-error-pages.Debian.erb": "578dfd537911a7b8ddcd485640452ac3",
+    "templates/php.ini.Debian.erb": "180a39ca262e132c6d431973986d7e39",
+    "templates/php.ini.RHEL.erb": "25cbb760e5fcf81165fbc33ce98fe6d9",
+    "templates/ssl.conf.RHEL.erb": "f116618fb85ffdda3cef1fcf5a8210c8",
+    "templates/vhost-default.conf.erb": "ed64a53af0d7bad762176a98c9ea3e62"
+  },
+  "types": [
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The name of the module to be managed"
+        }
+      ],
+      "providers": [
+        {
+          "name": "a2mod",
+          "doc": "Manage Apache 2 modules on Debian and Ubuntu"
+        },
+        {
+          "name": "modfix",
+          "doc": "Dummy provider for A2mod.\n\n    Fake nil resources when there is no crontab binary available. Allows\n    puppetd to run on a bootstrapped machine before a Cron package has been\n    installed. Workaround for: http://projects.puppetlabs.com/issues/2384\n    "
+        }
+      ],
+      "name": "a2mod",
+      "doc": "Manage Apache 2 modules on Debian and Ubuntu"
+    }
+  ],
+  "dependencies": []
+}
