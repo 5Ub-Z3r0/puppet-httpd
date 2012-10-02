@@ -80,7 +80,7 @@ class httpd(
     ensure  => directory,
     recurse => true,
     purge   => false,
-    source  => "puppet:///${module_name}/error",
+    source  => "puppet:///modules/${module_name}/error",
     ignore  => '\.svn',
     notify  => Service['httpd']
   }
