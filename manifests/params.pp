@@ -49,7 +49,7 @@ class httpd::params {
       $sslconfig_to = '/etc/httpd/conf.d/ssl.conf'
       $sslconfig_from = "${module_name}/ssl.conf.RHEL.erb"
       $deflateconfig_to = '/etc/httpd/conf.d/00-deflate.conf'
-      $deflateconfig_from = "puppet:///${module_name}/deflate.conf"
+      $deflateconfig_from = "puppet:///modules/${module_name}/deflate.conf"
       $phpconfig_to = '/etc/php.ini'
       $phpconfig_from = "${module_name}/php.ini.RHEL.erb"
     }
@@ -65,7 +65,7 @@ class httpd::params {
       $config_to = '/etc/apache2/conf.d/localized-error-pages'
       $config_from = "${module_name}/localized-error-pages.Debian.erb"
       $deflateconfig_to = '/etc/apache2/mods-available/deflate.conf'
-      $deflateconfig_from = "puppet:///${module_name}/deflate.conf"
+      $deflateconfig_from = "puppet:///modules/${module_name}/deflate.conf"
       $phpconfig_to = '/etc/php5/cli/php.ini'
       $phpconfig_from = "${module_name}/php.ini.Debian.erb"
     }
@@ -81,7 +81,7 @@ class httpd::params {
       $config_to = '/etc/apache2/conf.d/localized-error-pages'
       $config_from = "${module_name}/localized-error-pages.Debian.erb"
       $deflateconfig_to = '/etc/apache2/mods-available/deflate.conf'
-      $deflateconfig_from = "puppet:///${module_name}/deflate.conf"
+      $deflateconfig_from = "puppet:///modules/${module_name}/deflate.conf"
       $phpconfig_to = '/etc/php5/cli/php.ini'
       $phpconfig_from = "${module_name}/php.ini.Debian.erb"
     }
