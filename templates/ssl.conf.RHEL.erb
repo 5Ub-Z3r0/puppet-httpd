@@ -10,8 +10,9 @@
 #
 
 # TODO: bug #8707 affects this line and won't work if ssl (and not spdy) is enabled.
-# https://projects.puppetlabs.com/issues/8707
-<% if !scope.lookupvar("httpd::spdy::enabled").nil? %># <%end -%>LoadModule ssl_module modules/mod_ssl.so
+# https://projects.puppetlabs.com/issues/8707#change-61040
+# Workaround: use classes.include?
+<% if classes.include?("httpd::spdy") %># <%end -%>LoadModule ssl_module modules/mod_ssl.so
 
 #
 # When we also provide SSL we have to listen to the 
